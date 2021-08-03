@@ -1,0 +1,12 @@
+CREATE DATABASE `pruebabd` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+
+CREATE TABLE `productos` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `descripcion` varchar(200) DEFAULT NULL,
+  `modelo` varchar(10) DEFAULT NULL,
+  `nombre` varchar(20) NOT NULL,
+  `precio` double NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UK_mlgw7js72hh2xtd4mvpdqfsbe` (`nombre`),
+  UNIQUE KEY `UK_t5gbaya30nitpij76j0bh8si3` (`precio`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
