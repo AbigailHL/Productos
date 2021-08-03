@@ -23,7 +23,11 @@ import com.productos.service.ProductoService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-
+/**
+ * Servicio REST
+ * @author abi_l
+ *
+ */
 @RestController
 @RequestMapping("api/productos")
 public class ProductoController {
@@ -32,15 +36,23 @@ public class ProductoController {
 	private ProductoService productoService;
 	
 	
-	//Crear producto nuevo
 	
+	/**
+	 * Crea un nuevo producto
+	 * @param product
+	 * @return status
+	 */
 	@PostMapping	
 	public ResponseEntity<?> create(@RequestBody Producto product){
 		return ResponseEntity.status(HttpStatus.CREATED).body(productoService.save(product));
 	}
 	
 	
-	//Leer un producto
+	/**
+	 * Endpoint para leer un produto dado un id
+	 * @param id
+	 * @return Producto
+	 */
 	@GetMapping("/{id}")
 	public ResponseEntity<?> read(@PathVariable Long id){
 		Optional<Producto> oProducto = productoService.findById(id);
@@ -56,9 +68,12 @@ public class ProductoController {
 	
 	
 	
-	
-	
-	//Actualizar un producto
+	/**
+	 * Endpoint para actualiza un producto dado un id
+	 * @param productDetails
+	 * @param id
+	 * @returnc status
+	 */
 	@PutMapping("/{id}")
 	public ResponseEntity<?> update (@RequestBody Producto productDetails, @PathVariable Long id){
 		Optional<Producto> oProducto = productoService.findById(id);
@@ -97,8 +112,8 @@ public class ProductoController {
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Endpoint para leer todos los productos
+	 * @return una lista de Productos
 	 */
 	@GetMapping
 	public List<Producto> readAll(){

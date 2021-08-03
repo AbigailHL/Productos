@@ -11,7 +11,11 @@ import org.springframework.transaction.annotation.Transactional;
 import com.productos.dao.Producto;
 import com.productos.repository.ProductoRepository;
 
-
+/**
+ * Implementamos la interfaz ProductoService para utilizar los metodos para Producto
+ * @author abi_l
+ *
+ */
 @Service
 public class ProductoServiceImpl implements ProductoService{
 	
